@@ -1,21 +1,11 @@
-import { Hero  } from './classes/Hero';
-// import { Hero as Superhero, Hero2 } from './classes/Hero';
-// Si quiero imprortarlo todo 
-// import  * as HeroClasses from './classes/Hero';
-// import powers, {Power} from './data/powers';
+import { printObject, genericFunction } from '../generics/generics';
 
-// const Hero = 100; //si desea usar una variable hero. 
+printObject( 123);
+printObject( new Date());
+printObject( {a:1, b:2 , c:3});
+printObject([1,2,3,4,5,6]);
+printObject('Hola Mundo');
 
-const ironman = new Hero('Ironman', 1, 55);
-// const ironman = new Superhero('Ironman', 1000, 55);
-// const ironman = new HeroClasses.Hero('Ironman', 1000, 55); // Haciendo referencia a HeroClasses. 
-console.log({ironman});
-console.log(ironman.power);
-// console.log(powers);
-
-
-
-
-
-
-
+console.log(genericFunction(3.1416).toFixed(2));
+console.log(genericFunction('Hola Mundo').toFixed(2));
+console.log(genericFunction(new Date()).toFixed(2));
