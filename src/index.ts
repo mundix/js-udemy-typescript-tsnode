@@ -6,10 +6,11 @@ import { Hero  } from './classes/Hero';
 
 // const Hero = 100; //si desea usar una variable hero. 
 
-const ironman = new Hero('Ironman', 1000, 55);
+const ironman = new Hero('Ironman', 1, 55);
 // const ironman = new Superhero('Ironman', 1000, 55);
 // const ironman = new HeroClasses.Hero('Ironman', 1000, 55); // Haciendo referencia a HeroClasses. 
 console.log({ironman});
+console.log(ironman.power);
 // console.log(powers);
 
 
