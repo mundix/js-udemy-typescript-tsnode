@@ -1,4 +1,4 @@
-import { printObject, genericFunction, genericFunctionArrow } from '../../generics/generics';
+import { printObject, genericFunction, genericFunctionArrow } from '../generics/generics';
 import { Hero, Villain } from '../interfaces'; //Aqui se pueden poenr todo los interface enun solo archivo
 // import { Hero } from './interfaces/hero';
 // import { Villain } from './interfaces/villain';
