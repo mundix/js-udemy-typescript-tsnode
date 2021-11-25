@@ -1,9 +1,9 @@
-import { getPokemon } from './generics/get-pokemon';
+import { Pokemon } from './decorators/pokemon-class';
 
 
-getPokemon(4)
-    // .then( resp => console.log(resp))
-    .then( pokemon => console.log(pokemon.sprites.front_default))
-    .catch(err => console.log(err))
-    .finally( () => console.log('Fin de getPokemon'))
+// Trabajando con Decoradores 
+// El decorador mas facil es el de las clases 
+const charmander = new Pokemon('Charmander');
 
+
+console.log(charmander);
