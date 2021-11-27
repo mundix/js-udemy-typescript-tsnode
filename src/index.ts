@@ -8,6 +8,8 @@ const charmander = new Pokemon('Charmander');
 // Demstrando que funciona el bloqueo cone l decorador 
 // Error: index.ts:8 Uncaught TypeError: Cannot add property customName, object is not extensible
 // (Pokemon.prototype as any).customName = 'pikachu';
+
+charmander.publicApi = 'https://mundix.com';
 console.log(charmander);
 
-charmander.savePokemonToDB(10);
+// charmander.savePokemonToDB(10);

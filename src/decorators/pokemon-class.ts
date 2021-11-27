@@ -48,6 +48,30 @@ function CheckValidPokemonId() {
     }
 }
 
+function readonly(isWriteable: boolean = true): Function {
+    //si es solo la propeidad ponemos el target
+    // return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    return function(target: any, propertyKey: string) {
+        // console.log({target, propertyKey, descriptor});
+        const descriptor: PropertyDescriptor = {
+            get(){
+                console.log(this);
+                return 'Edmundo'
+            },
+            set(this, val){
+                // console.log(this, val);
+                Object.defineProperty( this, propertyKey, {
+                    value: val,
+                    writable: !isWriteable,
+                    enumerable: false //esto es para que nisiqueira se pueda ver 
+                });
+            }
+        }
+
+        return descriptor;
+    }
+} 
+
 //Ya con esto debe funcionar hay que ponerlo en el tsconfig o jsconfig 
 // Esto solo funciona al momento de compilar el codigo , cuando le pone el decorador @printToConsole
 // @printToConsole 
@@ -57,6 +81,9 @@ function CheckValidPokemonId() {
 @printToConsoleConditional( false)
 export class Pokemon {
 
+    // Evitar que accedan a publicApi, por que aun poniendo private se accede 
+    // Con un decorator 
+    @readonly()
     public  publicApi: string = 'https://pokeapi.co';
 
      constructor(
