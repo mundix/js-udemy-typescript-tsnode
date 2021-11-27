@@ -17,11 +17,21 @@ const printToConsoleConditional = (print: boolean = false) : Function => {
     }
 }
 
+// Crear DEcorador que me bloquee la clase y no se pueda expandir 
+const bloquearPrototipo = function(constructor: Function) {
+    // Se puede bloquear con esto
+    // Va a prevenir que alguien haga una expansion o metodos de una clase  
+    Object.seal( constructor);
+    Object.seal( constructor.prototype);
+}
+
 //Ya con esto debe funcionar hay que ponerlo en el tsconfig o jsconfig 
 // Esto solo funciona al momento de compilar el codigo , cuando le pone el decorador @printToConsole
 // @printToConsole 
 // Puedo pmandarle argumento 
-@printToConsoleConditional( false)
+//Se puede poenr tantos decoradores como desee, 
+@bloquearPrototipo 
+@printToConsoleConditional( true)
 export class Pokemon {
 
     public  publicApi: string = 'https://pokeapi.co';
